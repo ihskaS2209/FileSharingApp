@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
 const DBConnection = async () =>{
-    const MONGODB_URL = `mongodb+srv://sakshiS:7_R3G_XiH6kEkQR@file-sharing.f2bydwt.mongodb.net/?retryWrites=true&w=majority`;
+    // const MONGODB_URL = `mongodb+srv://sakshiS:7_R3G_XiH6kEkQR@file-sharing.f2bydwt.mongodb.net/?retryWrites=true&w=majority`;
+
+    const MONGODB_URL = process.env.MONGODB_URL;
 
     try{
         await mongoose.connect(MONGODB_URL, {useNewUrlParser: true});
